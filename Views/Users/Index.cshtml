@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Cet322_FinalProject.Models.User>
+
+@{
+    ViewData["Title"] = "Players";
+}
+
+<h1 align="center" >See All the Players</h1>
+
+<p>
+    <a asp-action="Create" align="center" >Create New</a>
+</p>
+
+
+    <table class="table">
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+
+
+
+                <div  class="single-game-review-area d-flex flex-wrap mb-30">
+
+                    <div class="game-content">
+                        <span class="game-tag">@item.Name</span>
+                        <a  class="game-title">@item.UserName</a>
+                        <div class="game-meta">
+                            <a href="#" class="game-date">@item.SkillName</a>
+                            <a href="#" class="game-comments">@item.GameName</a>
+
+                        </div>
+
+                        <p>
+                            <a href="#" class="game-comments">Age: @item.Age</a>
+                            <a href="#" class="game-date">Mail: @item.Mail</a><br />
+
+                            <a asp-action="Details" asp-route-id="@item.UserName">Details</a>
+
+
+                        </p>
+
+                    </div>
+                </div>
+
+
+
+
+            }
+        </tbody>
+    </table>
+
+

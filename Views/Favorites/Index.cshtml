@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Cet322_FinalProject.Models.Favorite>
+
+@{
+    ViewData["Title"] = "My Favorite Games";
+}
+
+    <h1>My Favorite Games</h1>
+
+<p>
+    <a asp-action="Create">Add Favorite </a>
+</p>
+<table class="table">
+    
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <div class="single-game-review-area d-flex flex-wrap mb-30">
+                <div class="game-thumbnail">
+                    <img src="img/bg-img/28.jpg" alt="">
+                </div>
+                <div class="game-content">
+                    <span class="game-tag">@item.UserName</span>
+                    <a href="single-game-review.html" class="game-title">@item.GameName</a>
+                    <div class="game-meta">
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+        }
+    </tbody>
+</table>

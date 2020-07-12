@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Cet322_FinalProject.Models.Blog>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+    <section class="latest-articles-area section-padding-100-0">
+        <h1>Blog</h1>
+        <h2> Latest Articles</h2>
+        <p>
+            <a asp-action="Create">Create New</a>
+        </p>
+    </section>
+
+@foreach (var item in Model)
+{
+<section class="latest-articles-area section-padding-100-0 bg-img bg-pattern bg-fixed" style="background-image: url(img/bg-img/5.jpg);">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-8">
+                <div class="mb-100">
+                    <!-- Title -->
+                    
+
+                    <!-- *** Single Articles Area *** -->
+                    <div class="single-articles-area style-2 d-flex flex-wrap mb-30 wow fadeInUp" data-wow-delay="300ms">
+                        <div class="article-thumbnail">
+                            <img src="img/bg-img/6.jpg" alt="">
+                        </div>
+                        <div class="article-content">
+                            <a href="single-post.html" class="post-title">@item.Blog_Id</a>
+
+                            <a href="single-post.html" class="post-title">@item.Forum</a>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+}
+
+
+
+
+

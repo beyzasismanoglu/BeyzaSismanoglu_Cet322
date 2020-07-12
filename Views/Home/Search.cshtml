@@ -1,0 +1,60 @@
+﻿@model Cet322_FinalProject.ViewModel.SearchViewModel
+@{
+    ViewData["Title"] = "Search";
+}
+
+<h1>Search</h1>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Search">
+            <div class="form-group">
+                <label asp-for="SearchText" class="control-label"></label>
+                <input asp-for="SearchText" class="form-control" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Find" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@if (Model?.Result != null)
+{
+    <h3>Possible Matches</h3>
+    <h5>@Model.Result.Count matches found.</h5>
+    <div class="row">
+        @foreach (var item in Model.Result)
+        {
+
+
+
+            <div class="single-game-review-area d-flex flex-wrap mb-30">
+
+                <div class="game-content">
+                    <span class="game-tag">@item.Name</span>
+                    <a class="game-title">@item.UserName</a>
+                    <div class="game-meta">
+                        <a href="#" class="game-date">@item.SkillName</a>
+                        <a href="#" class="game-comments">@item.GameName</a>
+
+                    </div>
+
+                    <p>
+                        <a href="#" class="game-comments">Age: @item.Age</a>
+                        <a href="#" class="game-date">Mail: @item.Mail</a><br />
+
+                        <a asp-action="Details" asp-route-id="@item.UserName">Details</a>
+
+
+                    </p>
+
+                </div>
+            </div>
+
+
+
+
+        }
+    </div>
+}

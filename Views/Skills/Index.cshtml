@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Cet322_FinalProject.Models.Skill>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SkillName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Skill_id)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SkillName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Skill_id)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.SkillName">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.SkillName">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.SkillName">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
